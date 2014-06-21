@@ -112,6 +112,8 @@
     };
 
     ZoomingFrame.prototype.addFigure = function ($el, map, opts) {
+        opts = opts || {};
+
         if (!opts.easing) {
             opts.easing = this.defaultEasing;
         }

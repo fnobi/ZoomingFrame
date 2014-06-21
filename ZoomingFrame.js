@@ -9902,6 +9902,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     };
 
     ZoomingFrame.prototype.addFigure = function ($el, map, opts) {
+        opts = opts || {};
+
         if (!opts.easing) {
             opts.easing = this.defaultEasing;
         }
