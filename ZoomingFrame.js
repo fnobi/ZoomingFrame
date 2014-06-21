@@ -9799,6 +9799,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
         this.$touchMat = opts.$touchMat || $('<div />');
         this.max = opts.max;
         this.defaultEasing = opts.defaultEasing;
+        this.jumpClock = opts.jumpClock || 50;
 
         this.offset = 0;
         this.isLocked = false;
@@ -9936,7 +9937,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
             return;
         }
 
-        var clock = 50;
+        var clock = this.jumpClock;
         var step = Math.floor(duration / clock);
         var unit = (to - this.offset) / step;
 
