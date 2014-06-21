@@ -8,6 +8,7 @@
         this.$content = opts.$content || $('<div />');
         this.$touchMat = opts.$touchMat || $('<div />');
         this.max = opts.max;
+        this.defaultEasing = opts.defaultEasing;
 
         this.offset = 0;
         this.isLocked = false;
@@ -111,6 +112,10 @@
     };
 
     ZoomingFrame.prototype.addFigure = function ($el, map, opts) {
+        if (!opts.easing) {
+            opts.easing = this.defaultEasing;
+        }
+
         var figure = new Figure($el, map, opts);
         
         this.on('scroll', function (scroll) {
@@ -178,8 +183,8 @@
 
         this.after = opts.after || 'hide';
 
-        this.easing = function (t) {
-            return Math.pow(t, 4);
+        this.easing = opts.easing || function (t) {
+            return t;
         };
 
         this.initEl();
