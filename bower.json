@@ -1,7 +1,7 @@
 {
   "name": "ZoomingFrame",
   "description": "Scroll motion manager.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "src/js/ZoomingFrame.js",
   "dependencies": {
     "jquery": "~1.10.*",
